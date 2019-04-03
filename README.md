@@ -1,4 +1,4 @@
-# Zephyr on LiteX-vexriscv
+# Zephyr on LiteX-VexRiscv
 
 ## Cloning the repository
 
