@@ -22,17 +22,21 @@ $ ./zephyr-sdk-0.9.5-setup.run
 
 Zephyr itself requires some additional tools to be installed in the system. Follow the [Zephyr documentation](http://docs.zephyrproject.org/getting_started/installation_linux.html) for requirements.
 
+Required python3 packages can be installed with:
+```sh
+$ pip3 install -r scripts/requiements.txt
+
 ### Building
 
 To build the application you need to setup a build environment.
 To do this, source the `zephyr-env.sh` file from the `zephyr` directory.
 ```sh
-$ source zephyr/zephyr-env.sh
+$ source zephyr-env.sh
 ```
 Additionally, three environment variables have to be set before building the app:
 
 ```sh
-$ export ZEPHYR_GCC_VARIANT="zephyr"
+$ export ZEPHYR_TOOLCHAIN_VARIANT="zephyr"
 $ export ZEPHYR_SDK_INSTALL_DIR="/opt/zephyr-sdk" #assuming default sdk install directory
 $ export BOARD="arty_litex_vexriscv"
 ```
