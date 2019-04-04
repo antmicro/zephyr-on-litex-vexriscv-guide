@@ -15,9 +15,9 @@ In order to build a sample application, the Zephyr SDK has to be installed in th
 To install the Zephyr SDK, do the following:
 
 ```sh
-$ wget https://github.com/zephyrproject-rtos/meta-zephyr-sdk/releases/download/0.9.5/zephyr-sdk-0.9.5-setup.run
-$ chmod +x zephyr-sdk-0.9.5-setup.run
-$ ./zephyr-sdk-0.9.5-setup.run
+$ wget https://github.com/zephyrproject-rtos/meta-zephyr-sdk/releases/download/0.10.0/zephyr-sdk-0.10.0-setup.run
+$ chmod +x zephyr-sdk-0.10.0-setup.run
+$ ./zephyr-sdk-0.10.0-setup.run
 ```
 
 Zephyr itself requires some additional tools to be installed in the system. Follow the [Zephyr documentation](http://docs.zephyrproject.org/getting_started/installation_linux.html) for requirements.
