@@ -24,7 +24,8 @@ Zephyr itself requires some additional tools to be installed in the system. Foll
 
 Required python3 packages can be installed with:
 ```sh
-$ pip3 install -r scripts/requiements.txt
+$ pip3 install -r scripts/requirements.txt
+```
 
 ### Building
 
