@@ -58,6 +58,14 @@ $ make -j`nproc`
 
 The resulting binary is located in the `build/zephyr` directory under `zephyr.bin`.
 
+## Simulation
+
+Before running it on the hardware, the Zephyr application can be tested in simulation:
+```sh
+litex_sim --cpu-type=vexriscv --cpu-variant=full --ram-init=<path_to_zephyr.bin>
+
+```
+
 ## Binary deployment
 
 Zephyr has been tested on system generated from the [Antmicro's fork](https://github.com/antmicro/litex/tree/vexriscv-zephyr) of the LiteX repository.
