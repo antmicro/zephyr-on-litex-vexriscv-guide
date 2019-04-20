@@ -1,4 +1,4 @@
-# Zephyr on LiteX-vexriscv
+# Zephyr on LiteX-VexRiscv
 
 ## Cloning the repository
 
@@ -15,24 +15,29 @@ In order to build a sample application, the Zephyr SDK has to be installed in th
 To install the Zephyr SDK, do the following:
 
 ```sh
-$ wget https://github.com/zephyrproject-rtos/meta-zephyr-sdk/releases/download/0.9.3/zephyr-sdk-0.9.3-setup.run
-$ chmod +x zephyr-sdk-0.9.3-setup.run
-$ ./zephyr-sdk-0.9.3-setup.run
+$ wget https://github.com/zephyrproject-rtos/meta-zephyr-sdk/releases/download/0.10.0/zephyr-sdk-0.10.0-setup.run
+$ chmod +x zephyr-sdk-0.10.0-setup.run
+$ ./zephyr-sdk-0.10.0-setup.run
 ```
 
 Zephyr itself requires some additional tools to be installed in the system. Follow the [Zephyr documentation](http://docs.zephyrproject.org/getting_started/installation_linux.html) for requirements.
+
+Required python3 packages can be installed with:
+```sh
+$ pip3 install -r scripts/requirements.txt
+```
 
 ### Building
 
 To build the application you need to setup a build environment.
 To do this, source the `zephyr-env.sh` file from the `zephyr` directory.
 ```sh
-$ source zephyr/zephyr-env.sh
+$ source zephyr-env.sh
 ```
 Additionally, three environment variables have to be set before building the app:
 
 ```sh
-$ export ZEPHYR_GCC_VARIANT="zephyr"
+$ export ZEPHYR_TOOLCHAIN_VARIANT="zephyr"
 $ export ZEPHYR_SDK_INSTALL_DIR="/opt/zephyr-sdk" #assuming default sdk install directory
 $ export BOARD="arty_litex_vexriscv"
 ```
@@ -52,6 +57,14 @@ $ make -j`nproc`
 ```
 
 The resulting binary is located in the `build/zephyr` directory under `zephyr.bin`.
+
+## Simulation
+
+Before running it on the hardware, the Zephyr application can be tested in simulation:
+```sh
+litex_sim --cpu-type=vexriscv --cpu-variant=full --ram-init=<path_to_zephyr.bin>
+
+```
 
 ## Binary deployment
 
